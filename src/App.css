@@ -1,38 +1,83 @@
+:root{
+  --primary: rgb(223, 147, 7);
+  --secondary: grey;
+  --dark: #131a26;
+  --light: #eee;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: var(--light);
+}
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
-  flex-direction: column;
+  min-height: 100vh;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.calculator {
+  width: 100%;
+  max-width: 400px;
+  background-color: #eee;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0px 2px 64px rgba(0,0,0,0.3);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.display{
+  padding:16px;
+  text-align: right;
+  background-color: var(--dark);
+  color:var(--light);
+  font-size: 26px;
+  font-weight: 280;
+}
+
+.display span {
+  font-size:14px;
+  color:#888;
+}
+
+button {
+  appearance: none;
+  border: none;
+  outline: none;
+  color:var(--light);
+  font-size: 30px;
+  padding: 17px;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+button:hover {
+  opacity: 0.10;
+}
+
+.operators {
+  display: flex;
+}
+
+.operators button {
+  flex: 1 1 0%;
+  background-color: var(--primary);
+  font-weight: 730;
+}
+
+.Numbers {
+  display:flex;
+  flex-wrap: wrap;
+}
+
+.Numbers button {
+  flex: 1 1 33.333%;
+  max-width: 33.333%;
+  background-color: var(--dark);
 }
